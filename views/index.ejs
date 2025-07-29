@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Warehouse</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/script.js"></script>
+</head>
+<body>
+    <h1>Daftar Produk</h1>
+    <form action="/add" method="POST">
+        <input type="text" name="name" placeholder="Nama" required>
+        <input type="text" name="code" placeholder="Code" required>
+        <button type="submit">Tambah</button>
+    </form>
+
+    <ul>
+        <% product.forEach(products => { %>
+            <li>
+                <%= products.name %> - <%= products.code %>
+                <form action="/delete/<%= products.id %>" method="POST" style="display:inline;">
+                    <button type="submit">Hapus</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
