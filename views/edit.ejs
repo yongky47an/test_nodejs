@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Produk</title>
+</head>
+<body>
+    <h1>Edit Produk</h1>
+    <form action="/edit/<%= product.id %>" method="POST">
+        <input type="text" name="name" value="<%= product.name %>" required>
+        <input type="text" name="code" value="<%= product.code %>" required>
+        <button type="submit">Simpan</button>
+    </form>
+    <a href="/">Kembali</a>
+</body>
+</html>

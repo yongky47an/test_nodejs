@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Warehouse</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/script.js"></script>
+</head>
+<body>
+
+    <h1>Daftar Stok</h1>
+    <form action="/add_stock" method="POST">
+        <input type="text" name="code_product" placeholder="Code product" required>
+        <input type="text" name="quantity" placeholder="Quantity" required>
+        <button type="submit">Tambah</button>
+    </form>
+
+    <% stock.forEach(p => { %>
+    <li>
+        <%= p.code_product %> - <%= p.quantity %>
+        <a href="/edit_stock/<%= p.id %>">Edit</a>
+        <form action="/delete_stock/<%= p.id %>" method="POST" style="display:inline;">
+            <button type="submit">Hapus</button>
+        </form>
+    </li>
+<% }) %>
+
+</body>
+</html>

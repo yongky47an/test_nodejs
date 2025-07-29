@@ -14,15 +14,15 @@
         <button type="submit">Tambah</button>
     </form>
 
-    <ul>
-        <% product.forEach(products => { %>
-            <li>
-                <%= products.name %> - <%= products.code %>
-                <form action="/delete/<%= products.id %>" method="POST" style="display:inline;">
-                    <button type="submit">Hapus</button>
-                </form>
-            </li>
-        <% }) %>
-    </ul>
+    <% product.forEach(p => { %>
+    <li>
+        <%= p.name %> - <%= p.code %>
+        <a href="/edit/<%= p.id %>">Edit</a>
+        <form action="/delete/<%= p.id %>" method="POST" style="display:inline;">
+            <button type="submit">Hapus</button>
+        </form>
+    </li>
+<% }) %>
+
 </body>
 </html>

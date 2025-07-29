@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Purchase</title>
+</head>
+<body>
+    <h1>Edit Purchase</h1>
+    <form action="/edit_purchase/<%= purchase.id %>" method="POST">
+        <input type="text" name="code_transaction" value="<%= purchase.code_transaction %>" required>
+        <input type="text" name="quantity" value="<%= purchase.quantity %>" required>
+        <button type="submit">Simpan</button>
+    </form>
+    <a href="/">Kembali</a>
+</body>
+</html>

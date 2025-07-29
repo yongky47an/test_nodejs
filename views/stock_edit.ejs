@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Stok</title>
+</head>
+<body>
+    <h1>Edit Stok</h1>
+    <form action="/edit_stock/<%= stock.id %>" method="POST">
+        <input type="text" name="code_product" value="<%= stock.code_product %>" required>
+        <input type="text" name="quantity" value="<%= stock.quantity %>" required>
+        <button type="submit">Simpan</button>
+    </form>
+    <a href="/">Kembali</a>
+</body>
+</html>
