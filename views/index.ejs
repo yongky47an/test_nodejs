@@ -20,7 +20,7 @@
       <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="./index.html" class="text-nowrap logo-img">
+          <a href="./.html" class="text-nowrap logo-img">
             <img src="../assets/images/logos/dark-logo.svg" width="180" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -47,7 +47,7 @@
               <span class="hide-menu">MENU</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="/index" aria-expanded="false">
+              <a class="sidebar-link" href="/" aria-expanded="false">
                 <span>
                   <i class="ti ti-article"></i>
                 </span>
@@ -152,7 +152,6 @@
                         <li class="breadcrumb-item active" aria-current="page">Produk</li>
                       </ol>
                     </nav>
-                    <h1>Daftar Produk</h1>
                     <form action="/add" method="POST">
                         <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
@@ -160,8 +159,31 @@
                         <div id="name" class="form-text"></div>
                         </div>
                         <div class="mb-3">
-                        <label for="code" class="form-label">Password</label>
+                        <label for="code" class="form-label">Kode</label>
                         <input type="text" class="form-control" id="code" name="code" placeholder="Code" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="type" class="form-label">Tipe Produk</label>
+                            <select class="form-select" id="type" name="type" required>
+                                <option value="">-- Pilih Tipe --</option>
+                                <option value="Elektronik">Elektronik</option>
+                                <option value="Pakaian">Pakaian</option>
+                                <option value="Makanan">Makanan</option>
+                                <option value="Minuman">Minuman</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                        <label for="brand" class="form-label">Brand</label>
+                        <input type="text" class="form-control" id="brand" name="brand" placeholder="Brand" required>
+                        </div>
+                        <div class="mb-3">
+                        <label for="unit" class="form-label">Unit</label>
+                        <input type="text" class="form-control" id="unit" name="unit" placeholder="Unit" required>
+                        </div>
+                        <div class="mb-3">
+                        <label for="sku" class="form-label">Sku</label>
+                        <input type="text" class="form-control" id="sku" name="sku" placeholder="Sku" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -206,6 +228,15 @@
         </div>
         <div class="py-6 px-6 text-center">
           <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/" target="_blank" class="pe-1 text-primary text-decoration-underline">AdminMart.com</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 d-flex align-items-strech">
+            <form method="POST" action="/ask-ai">
+                <input type="text" name="question" placeholder="Tanya stok apa saja?" />
+                <button type="submit">Tanya</button>
+            </form>
         </div>
       </div>
     </div>

@@ -1,0 +1,20 @@
+/* Database postgresql-16 */
+
+CREATE USER newadmin WITH PASSWORD 'admin123';
+CREATE DATABASE db_nodejs OWNER newadmin;
+GRANT ALL PRIVILEGES ON DATABASE db_nodejs TO newadmin;
+
+
+file server.js edit sesuai host Database
+// Konfigurasi PostgreSQL
+const pool = new Pool({
+    user: 'newadmin',
+    host: '192.168.18.230',
+    database: 'db_nodejs',
+    password: 'admin123',
+    port: 5432,
+});
+
+
+//Tambahkan key Api
+OPENAI_API_KEY=sk-xxxxxx

@@ -20,7 +20,7 @@
       <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-          <a href="./index.html" class="text-nowrap logo-img">
+          <a href="./.html" class="text-nowrap logo-img">
             <img src="../assets/images/logos/dark-logo.svg" width="180" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
@@ -47,7 +47,7 @@
               <span class="hide-menu">MENU</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="/index" aria-expanded="false">
+              <a class="sidebar-link" href="/" aria-expanded="false">
                 <span>
                   <i class="ti ti-article"></i>
                 </span>
@@ -145,19 +145,21 @@
               <div class="card-body">
                 <div class="d-md-flex align-items-center">
                   <div>
-                    <h4>Produk</h4>
                     <nav aria-label="breadcrumb" class="d-none d-md-block">
                       <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Produk</li>
+                        <li class="breadcrumb-item active" aria-current="page">Stok</li>
                       </ol>
                     </nav>
-                    <h1>Daftar Stok</h1>
                     <form action="/add_stock" method="POST">
                         <div class="mb-3">
-                        <label for="name" class="form-label">Code produk</label>
-                        <input type="text" class="form-control" id="name" name="code_product" placeholder="Code product" required>
-                        <div id="name" class="form-text"></div>
+                            <label for="code_product" class="form-label">Pilih Produk</label>
+                            <select class="form-select" id="code_product" name="code_product" required>
+                                <option value="">-- Pilih Produk --</option>
+                                <% products.forEach(p => { %>
+                                    <option value="<%= p.code %>"><%= p.name %> (<%= p.code %>)</option>
+                                <% }) %>
+                            </select>
                         </div>
                         <div class="mb-3">
                         <label for="code" class="form-label">Quantity</label>
@@ -176,7 +178,11 @@
             <thead class="table-dark">
                 <tr>
                     <th>ID</th>
-                    <th>Code</th>
+                    <th>Produk</th>
+                    <th>Kode Produk</th>
+                    <th>Brand</th>
+                    <th>Unit</th>
+                    <th>SKU</th>
                     <th>Quantity</th>
                     <th>Aksi</th>
                 </tr>
@@ -185,7 +191,11 @@
                 <% stock.forEach(p => { %>
                     <tr>
                         <td><%= p.id %></td>
+                        <td><%= p.product_name %></td>
                         <td><%= p.code_product %></td>
+                        <td><%= p.brand %></td>
+                        <td><%= p.unit %></td>
+                        <td><%= p.sku %></td>
                         <td><%= p.quantity %></td>
                         <td>
                             <a href="/edit_stock/<%= p.id %>" class="btn btn-sm btn-warning">Edit</a>

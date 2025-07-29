@@ -1,5 +1,0 @@
-/* Database postgresql-16 */
-
-CREATE USER newadmin WITH PASSWORD 'admin123';
-CREATE DATABASE db_nodejs OWNER newadmin;
-GRANT ALL PRIVILEGES ON DATABASE db_nodejs TO newadmin;

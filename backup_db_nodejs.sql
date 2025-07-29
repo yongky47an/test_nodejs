@@ -161,7 +161,16 @@ ALTER TABLE ONLY public.stock ALTER COLUMN id SET DEFAULT nextval('public.stock_
 --
 
 COPY public.product (id, code, name, type, brand, unit, sku, create_at, delete_at) FROM stdin;
-2	0002	Teh Sariwangiii	\N	\N	\N	\N	2025-07-29 16:48:22.742264	\N
+4	0001	Kopi kapal api	Minuman	Kapal Api	Bungkus	Kpi-0001-bks	2025-07-29 22:43:43.334697	\N
+5	0002	Teh Sariwangi	Minuman	Sariwangi	Pak	Swi-0002-pak	2025-07-29 22:44:35.437146	\N
+6	0003	Mie Sedap 	Makanan	Sedap	Bungkus	Msd-0003-bks	2025-07-29 22:45:21.491594	\N
+7	0004	Kopi Torabika	Minuman	Torabika	Pak	Tbk-0004-pak	2025-07-29 22:46:36.105986	\N
+8	0005	Indomie	Makanan	Indomie	Bungkus	Idm-0005-bks	2025-07-29 22:47:30.985085	\N
+9	0006	Indomilk	Minuman	Indomilk	Kotak	Inm-0006-ktk	2025-07-29 22:49:06.677969	\N
+10	0007	Permen Mentos	Lainnya	Mentos	Biji	Mts-0007-bij	2025-07-29 22:51:27.128016	\N
+12	0009	Batre Abc	Elektronik	Abc	Biji	Abc-0009-bij	2025-07-29 22:53:35.042641	\N
+11	0008	Aqua galon	Minuman	Aqua	Galon	Agn-0008-gal	2025-07-29 22:52:23.601937	\N
+13	0010	Lampu Osram	Elektronik	Osram	Buah	Osr-0010-bah	2025-07-29 22:55:48.613583	\N
 \.
 
 
@@ -170,8 +179,8 @@ COPY public.product (id, code, name, type, brand, unit, sku, create_at, delete_a
 --
 
 COPY public.purchase (id, code_transaction, create_at, delete_at, quantity) FROM stdin;
-1	12345	2025-07-29 17:20:14.640125	\N	99999.00
-2	111213131	2025-07-29 18:56:05.973892	\N	234323.00
+4	0002	2025-07-29 22:21:17.682824	\N	100.00
+5	0005	2025-07-29 22:57:13.726547	\N	1000.00
 \.
 
 
@@ -180,9 +189,12 @@ COPY public.purchase (id, code_transaction, create_at, delete_at, quantity) FROM
 --
 
 COPY public.stock (id, code_product, quantity, create_at, delete_at) FROM stdin;
-1	00032	399.00	2025-07-29 17:04:26.500817	\N
-2	1000	100000.00	2025-07-29 17:12:34.062211	\N
-3	39432492	42343242.00	2025-07-29 18:47:21.187648	\N
+5	0002	9900.00	2025-07-29 22:16:38.263107	\N
+6	0008	100000.00	2025-07-29 22:56:01.224211	\N
+7	0010	9000.00	2025-07-29 22:56:09.777436	\N
+8	0001	1000.00	2025-07-29 22:56:17.057434	\N
+9	0007	10000.00	2025-07-29 22:56:29.495432	\N
+10	0005	99000.00	2025-07-29 22:56:45.673351	\N
 \.
 
 
@@ -190,21 +202,21 @@ COPY public.stock (id, code_product, quantity, create_at, delete_at) FROM stdin;
 -- Name: product_id_seq; Type: SEQUENCE SET; Schema: public; Owner: newadmin
 --
 
-SELECT pg_catalog.setval('public.product_id_seq', 2, true);
+SELECT pg_catalog.setval('public.product_id_seq', 13, true);
 
 
 --
 -- Name: purchase_id_seq; Type: SEQUENCE SET; Schema: public; Owner: newadmin
 --
 
-SELECT pg_catalog.setval('public.purchase_id_seq', 2, true);
+SELECT pg_catalog.setval('public.purchase_id_seq', 5, true);
 
 
 --
 -- Name: stock_id_seq; Type: SEQUENCE SET; Schema: public; Owner: newadmin
 --
 
-SELECT pg_catalog.setval('public.stock_id_seq', 3, true);
+SELECT pg_catalog.setval('public.stock_id_seq', 10, true);
 
 
 --
